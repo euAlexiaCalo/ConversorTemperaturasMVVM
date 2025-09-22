@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConversorTemperaturasMVVM.MainPage"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label 
+                Text="Conversor de Temperaturas"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,0,0,40"/>
+            <Grid
+                ColumnDefinitions="Auto,Auto, *"
+                ColumnSpacing="12"
+                Margin="20,4">
+                <Picker
+                    Grid.Column="0"
+                    Title="De:"
+                    MinimumWidthRequest="180"
+                    ItemsSource="{Binding Temperatures}"
+                    SelectedItem="{Binding From, Mode=TwoWay}"/>
+                <Entry
+                    Placeholder="Ex.: 25,5"
+                    Text="{Binding AmountText}"
+                    FontSize="18"
+                    Keyboard="Numeric"
+                    HeightRequest="40"
+                    MinimumWidthRequest="160"
+                    VerticalOptions="End"
+                    Grid.Column="1"/>
+                <Button
+                    Text="Converter"
+                    Command="{Binding ConvertCommand}"
+                    FontSize="18"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    HorizontalOptions="End"
+                    VerticalOptions="Fill"
+                    MinimumWidthRequest="120"/>
+            </Grid>
+
+            <Grid
+                ColumnDefinitions="*, Auto"
+                ColumnSpacing="18"
+                Margin="20,4">
+                <Frame
+                    Padding="12"
+                    BackgroundColor="LightGray"
+                    BorderColor="Gray"
+                    Grid.Column="0">
+                    <Label
+                        Text="{Binding ResultText}"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"/>
+                </Frame>
+                <Button
+                    Text="Limpar"
+                    Command="{Binding ClearCommand}"
+                    FontSize="16"
+                    Grid.Column="1"
+                    MinimumWidthRequest="100"
+                    MaximumHeightRequest="50"/>
+            </Grid>
+            <Label 
+                Text="Dica: use vírgula ou ponto para decimais (ex.: 21,3 ou 21.3)."
+                FontSize="14"
+                TextColor="Gray"
+                HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
