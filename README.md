@@ -36,7 +36,6 @@ O app permite ao usuário:
 - (Opcional) **Dispositivo Android** ou emulador configurado  
 - (Opcional – macOS) Para compilar iOS/MacCatalyst, é necessário ambiente Apple  
 
-```bash
 dotnet workload install maui
 
 ## Como obter o projeto
