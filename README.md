@@ -41,8 +41,10 @@ dotnet workload install maui
 ## Como obter o projeto
 
 ### Opção 1 — Git (recomendado)
+```bash
 - git clone https://github.com/seu-usuario/seu-repo.git
 - cd seu-repo
+```
 
 ### Opção 2 — Download
 - Baixe o .zip do repositório
@@ -90,12 +92,14 @@ dotnet workload install maui
 
 ## 📁 Estrutura do Projeto
 
+```text
 /ConversorTemperaturas
 ├─ MainPage.xaml
 ├─ MainPage.xaml.cs
 ├─ MainViewModels.cs
 ├─ MainModels.cs
 └─ App.xaml
+```
 
 ---
 
